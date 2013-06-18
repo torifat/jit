@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]
+then
+  echo "TODO: will print help"
+  exit 1
+fi
+
+JIT_FILE_DIRECTORY=$(dirname "$0")
+JIT_FILE_DIRECTORY=$(cd "$JIT_FILE_DIRECTORY" && pwd -P)
+
+JIT_SYMLINK=$(readlink $0)
+if [ -n "$JIT_SYMLINK" ]
+then
+  JIT_SYMLINK_DIRECTORY=$(dirname "$JIT_SYMLINK")
+  JIT_FILE_DIRECTORY=$(cd "$JIT_FILE_DIRECTORY" &&
+                        cd "$JIT_SYMLINK_DIRECTORY" && pwd -P)
+fi
+
+if [ -x "$JIT_FILE_DIRECTORY/${1}.js" ]
+then
+  exec "$JIT_FILE_DIRECTORY/${1}.js" "${@:2}"
+else
+  echo "TODO: will print help"
+  exit 1
+fi
+#exec "$JIT_FILE_DIRECTORY/jit.js" "$@"
