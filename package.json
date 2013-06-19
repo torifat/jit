@@ -1,0 +1,23 @@
+{
+  "name": "jit",
+  "version": "0.0.1",
+  "description": "js + git = jit (fun project)",
+  "main": "jit",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/torifat/jit.git"
+  },
+  "author": "Rifat Nabi <to.rifat@gmail.com>",
+  "license": "GPL",
+  "gitHead": "8ea4d22b74e60313939fd338e17a93970c8b42e1",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/torifat/jit/issues"
+  },
+  "dependencies": {
+    "underscore" : ">=1.4.4"
+  }
+}
